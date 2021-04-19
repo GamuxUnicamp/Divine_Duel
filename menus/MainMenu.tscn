@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://menus/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://media/particle/Emissor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://fonts/prstartk.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://media/black.png" type="Texture" id=4]
 [ext_resource path="res://media/yellow.png" type="Texture" id=5]
@@ -9,119 +10,115 @@
 size = 46
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 3 )
+
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Panel" type="Panel" parent="."]
-margin_right = 512.0
+margin_right = 1920.0
 margin_bottom = 1080.0
 rect_pivot_offset = Vector2( 256, 899.967 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Selector" type="Sprite" parent="."]
-position = Vector2( 0, 32 )
-scale = Vector2( 512, 64 )
-texture = ExtResource( 5 )
-centered = false
-
-[node name="ArcadeButton" type="TextureButton" parent="."]
-margin_left = 32.0
-margin_top = 42.0
-margin_right = 506.0
-margin_bottom = 87.0
+[node name="ArcadeButton" type="TextureButton" parent="Panel"]
+margin_left = 305.158
+margin_top = 303.0
+margin_right = 588.158
+margin_bottom = 352.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ArcadeButton"]
+[node name="Emissor" parent="Panel/ArcadeButton" instance=ExtResource( 2 )]
+position = Vector2( 150, 25 )
+
+[node name="Label" type="Label" parent="Panel/ArcadeButton"]
 custom_fonts/font = SubResource( 1 )
 text = "ARCADE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VersusButton" type="TextureButton" parent="."]
-margin_left = 32.0
-margin_top = 122.0
-margin_right = 500.0
-margin_bottom = 168.0
+[node name="VersusButton" type="TextureButton" parent="Panel"]
+margin_left = 800.0
+margin_top = 303.0
+margin_right = 1073.0
+margin_bottom = 349.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VersusButton"]
+[node name="Emissor" parent="Panel/VersusButton" instance=ExtResource( 2 )]
+position = Vector2( 130, 25 )
+
+[node name="Label" type="Label" parent="Panel/VersusButton"]
 custom_fonts/font = SubResource( 1 )
 text = "VERSUS"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OnlineButton" type="TextureButton" parent="."]
-margin_left = 32.0
-margin_top = 202.0
-margin_right = 500.0
-margin_bottom = 248.0
+[node name="OnlineButton" type="TextureButton" parent="Panel"]
+margin_left = 1311.97
+margin_top = 303.0
+margin_right = 1602.97
+margin_bottom = 355.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="OnlineButton"]
+[node name="Emissor" parent="Panel/OnlineButton" instance=ExtResource( 2 )]
+position = Vector2( 140, 25 )
+
+[node name="Label" type="Label" parent="Panel/OnlineButton"]
 custom_fonts/font = SubResource( 1 )
 text = "ONLINE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ExtrasButton" type="TextureButton" parent="."]
-margin_left = 33.0
-margin_top = 284.0
-margin_right = 500.0
-margin_bottom = 330.0
+[node name="OptionsButton" type="TextureButton" parent="Panel"]
+margin_left = 1080.0
+margin_top = 560.0
+margin_right = 1405.0
+margin_bottom = 606.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ExtrasButton"]
-custom_fonts/font = SubResource( 1 )
-text = "EXTRAS"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Emissor" parent="Panel/OptionsButton" instance=ExtResource( 2 )]
+position = Vector2( 150, 25 )
 
-[node name="OptionsButton" type="TextureButton" parent="."]
-margin_left = 37.0
-margin_top = 362.0
-margin_right = 500.0
-margin_bottom = 408.0
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="OptionsButton"]
+[node name="Label" type="Label" parent="Panel/OptionsButton"]
 custom_fonts/font = SubResource( 1 )
 text = "OPTIONS"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="QuitButton" type="TextureButton" parent="."]
-margin_left = 38.0
-margin_top = 439.0
-margin_right = 507.0
-margin_bottom = 485.0
+[node name="QuitButton" type="TextureButton" parent="Panel"]
+margin_left = 588.131
+margin_top = 560.0
+margin_right = 783.131
+margin_bottom = 606.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="QuitButton"]
+[node name="Emissor" parent="Panel/QuitButton" instance=ExtResource( 2 )]
+position = Vector2( 95, 25 )
+
+[node name="Label" type="Label" parent="Panel/QuitButton"]
 custom_fonts/font = SubResource( 1 )
 text = "QUIT"
 __meta__ = {
@@ -211,3 +208,14 @@ autoplay = true
 [node name="UIMoveSound" type="AudioStreamPlayer" parent="."]
 
 [node name="UISelectSound" type="AudioStreamPlayer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 389.604
+margin_top = 70.1287
+margin_right = 1389.6
+margin_bottom = 171.129
+custom_fonts/font = SubResource( 2 )
+text = "Game Title"
+__meta__ = {
+"_edit_use_anchors_": false
+}
