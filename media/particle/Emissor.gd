@@ -14,7 +14,7 @@ func start(object):
 	for i in range(n):
 		var particle=p.instance()
 		add_child(particle)
-	
+		
 		particle.start(direction.rotated(a+i*2*PI/n))
 	
 
