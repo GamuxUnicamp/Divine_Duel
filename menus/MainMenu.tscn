@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://menus/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://media/particle/Emissor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://fonts/prstartk.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://media/black.png" type="Texture" id=4]
 [ext_resource path="res://media/yellow.png" type="Texture" id=5]
+[ext_resource path="res://media/icone_menu.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 46
@@ -25,11 +26,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="icone_menu" type="Sprite" parent="Panel"]
+position = Vector2( 950.561, 532.263 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+
 [node name="ArcadeButton" type="TextureButton" parent="Panel"]
-margin_left = 305.158
-margin_top = 303.0
-margin_right = 588.158
-margin_bottom = 352.0
+margin_left = 36.382
+margin_top = 241.826
+margin_right = 319.382
+margin_bottom = 290.826
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -46,10 +52,10 @@ __meta__ = {
 }
 
 [node name="VersusButton" type="TextureButton" parent="Panel"]
-margin_left = 800.0
-margin_top = 303.0
-margin_right = 1073.0
-margin_bottom = 349.0
+margin_left = 62.3899
+margin_top = 866.925
+margin_right = 335.39
+margin_bottom = 912.925
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -66,10 +72,10 @@ __meta__ = {
 }
 
 [node name="OnlineButton" type="TextureButton" parent="Panel"]
-margin_left = 1311.97
-margin_top = 303.0
-margin_right = 1602.97
-margin_bottom = 355.0
+margin_left = 48.9407
+margin_top = 537.901
+margin_right = 339.941
+margin_bottom = 589.901
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -86,10 +92,10 @@ __meta__ = {
 }
 
 [node name="OptionsButton" type="TextureButton" parent="Panel"]
-margin_left = 1080.0
-margin_top = 560.0
-margin_right = 1405.0
-margin_bottom = 606.0
+margin_left = 1555.71
+margin_top = 570.561
+margin_right = 1880.71
+margin_bottom = 616.561
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -106,10 +112,10 @@ __meta__ = {
 }
 
 [node name="QuitButton" type="TextureButton" parent="Panel"]
-margin_left = 588.131
-margin_top = 560.0
-margin_right = 783.131
-margin_bottom = 606.0
+margin_left = 1646.67
+margin_top = 878.728
+margin_right = 1841.67
+margin_bottom = 924.728
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -210,12 +216,12 @@ autoplay = true
 [node name="UISelectSound" type="AudioStreamPlayer" parent="."]
 
 [node name="Label" type="Label" parent="."]
-margin_left = 389.604
-margin_top = 70.1287
-margin_right = 1389.6
-margin_bottom = 171.129
+margin_left = 412.053
+margin_top = 51.6884
+margin_right = 1512.05
+margin_bottom = 152.689
 custom_fonts/font = SubResource( 2 )
-text = "Game Title"
+text = "Divine Duel"
 __meta__ = {
 "_edit_use_anchors_": false
 }
