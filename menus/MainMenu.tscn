@@ -52,10 +52,10 @@ __meta__ = {
 }
 
 [node name="VersusButton" type="TextureButton" parent="Panel"]
-margin_left = 62.3899
-margin_top = 866.925
-margin_right = 335.39
-margin_bottom = 912.925
+margin_left = 53.4102
+margin_top = 590.799
+margin_right = 326.41
+margin_bottom = 636.799
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -72,10 +72,10 @@ __meta__ = {
 }
 
 [node name="OnlineButton" type="TextureButton" parent="Panel"]
-margin_left = 48.9407
-margin_top = 537.901
-margin_right = 339.941
-margin_bottom = 589.901
+margin_left = 46.6957
+margin_top = 912.803
+margin_right = 337.696
+margin_bottom = 964.803
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -87,6 +87,28 @@ position = Vector2( 140, 25 )
 [node name="Label" type="Label" parent="Panel/OnlineButton"]
 custom_fonts/font = SubResource( 1 )
 text = "ONLINE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GalleryButton" type="TextureButton" parent="Panel"]
+margin_left = 1571.0
+margin_top = 221.367
+margin_right = 1862.0
+margin_bottom = 273.367
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Emissor" parent="Panel/GalleryButton" instance=ExtResource( 2 )]
+position = Vector2( 140, 25 )
+
+[node name="Label" type="Label" parent="Panel/GalleryButton"]
+margin_right = 322.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 1 )
+text = "GALLERY"
 __meta__ = {
 "_edit_use_anchors_": false
 }
