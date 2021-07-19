@@ -23,14 +23,12 @@ func get_input():
 		aim_shot(Global.player2_pos)
 		timer0.start()
 	if Input.is_action_pressed("attack1") and timer1.get_time_left() == 0:
-		wide_shot()
+		wide_shot(Global.player2_pos)
 		timer1.start()
 	if Input.is_action_pressed("attack2") and timer2.get_time_left() == 0:
 		aim_shot(Global.player2_pos)
 		timer2.start()
-	if Input.is_action_pressed("attack3") and timer3.get_time_left() == 0:
-		wide_shot()
-		timer3.start()
+	
 
 func _physics_process(delta):
 	get_input()
@@ -42,7 +40,7 @@ func aim_shot(target):
 	get_tree().get_root().add_child(bullet)
 	bullet.move(target)
 
-func wide_shot():
+func wide_shot(target):
 	var bullet0 = basic_bullet_scene.instance()
 	var bullet1 = basic_bullet_scene.instance()
 	var bullet2 = basic_bullet_scene.instance()
