@@ -15,12 +15,16 @@ func move(source,R0,teta0,direction):
 	fonte=source
 	position=Vector2(R*cos(teta),R*sin(teta))
 	ready=true
+	$Line2D.add_point(Vector2(0,0))
+	$Line2D.add_point(-1*position)
 
 
 func _physics_process(delta):
 	R-=RADIAL_SPEED*delta
 	teta+=OMEGA*delta*sentido
 	position=Vector2(R*cos(teta),R*sin(teta))
+	if fonte:
+		$Line2D.set_point_position(1,-1*position)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

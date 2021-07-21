@@ -17,6 +17,8 @@ func move(source,target):
 		moving="indo"
 		startposition=source.position
 		endposition=source.position+(target-source.position)*1.1
+		$Line2D.add_point(Vector2(0,0))
+		$Line2D.add_point(source.position-position)
 	elif moving=="indo":
 		moving="voltando"
 		startposition=position
@@ -24,14 +26,21 @@ func _physics_process(delta):
 	var velocity
 	var percentual
 	if moving=="indo":
+		
 		percentual=(position-startposition).length()/(endposition-startposition).length()
 		velocity=max(MAX_ADVANCE_SPEED*cos(PI/2*percentual),MIN_ADVANCE_SPEED)*((endposition-startposition).normalized())
+		if fonte:
+			$Line2D.set_point_position(1,fonte.position-position)
 	elif moving=="voltando":
 		percentual=(position-startposition).length()/(fonte.position-startposition).length()
 		velocity=max(MAX_RETURN_SPEED*sin(PI/2*percentual),MIN_RETURN_SPEED)*((fonte.position-position).normalized())
+		if fonte:
+			
+			$Line2D.set_point_position(1,fonte.position-position)
 	else:
 		velocity=Vector2(0,0)
 		print("parado")
+		
 	position+=velocity*delta
 	
 	if moving=="indo" and percentual>=1:

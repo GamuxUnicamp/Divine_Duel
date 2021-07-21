@@ -40,3 +40,5 @@ texture = ExtResource( 1 )
 
 [node name="Character" parent="." instance=ExtResource( 2 )]
 position = Vector2( 362.631, 313.177 )
+z_index = 1
+z_as_relative = false
