@@ -10,6 +10,7 @@ var wide_bullet
 var wide_bullet2
 var R=500
 var teta=PI/4
+export var id=0
 
 var target
 
@@ -94,6 +95,8 @@ func receive():
 	tem_ioio=ioio.NENHUM
 
 func hit():
+	$AnimationPlayer.play("damage")
+	emit_signal("died",id)
 	if player_number == 1:
 		Global.demo_player_won = 2
 	if player_number == 2:
