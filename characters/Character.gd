@@ -7,6 +7,7 @@ onready var timer2 = $AttackTimer2
 onready var timer3 = $AttackTimer3
 
 var velocity = Vector2()
+var player_number
 
 func get_input():
 	velocity = Vector2()
@@ -20,13 +21,13 @@ func get_input():
 		velocity.y -= 1
 	velocity = velocity.normalized() * Global.CHAR_SPEED
 	if Input.is_action_pressed("attack0") and timer0.get_time_left() == 0:
-		aim_shot(Global.player2_pos)
+		shoot(Global.player2_pos)
 		timer0.start()
 	if Input.is_action_pressed("attack1") and timer1.get_time_left() == 0:
 		wide_shot(Global.player2_pos)
 		timer1.start()
 	if Input.is_action_pressed("attack2") and timer2.get_time_left() == 0:
-		aim_shot(Global.player2_pos)
+		shoot(Global.player2_pos)
 		timer2.start()
 	
 
@@ -34,7 +35,7 @@ func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
 
-func aim_shot(target):
+func shoot(target):
 	var bullet = basic_bullet_scene.instance()
 	bullet.position = self.position
 	get_tree().get_root().add_child(bullet)

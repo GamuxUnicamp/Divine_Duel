@@ -10,5 +10,4 @@ var player1_pos = Vector2()
 var player2_pos = Vector2()
 
 
-func _ready():
-	pass # Replace with function body.
+var demo_player_won

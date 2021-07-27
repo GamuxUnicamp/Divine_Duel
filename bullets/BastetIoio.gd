@@ -5,9 +5,9 @@ onready var moving="parado"
 var startposition
 var endposition
 var MAX_RETURN_SPEED=1500
-var MIN_RETURN_SPEED=100
+var MIN_RETURN_SPEED=200
 var MAX_ADVANCE_SPEED=1500
-var MIN_ADVANCE_SPEED=100
+var MIN_ADVANCE_SPEED=200
 var fonte
 var saiu=false
 # Called when the node enters the scene tree for the first time.
@@ -22,11 +22,11 @@ func move(source,target):
 	elif moving=="indo":
 		moving="voltando"
 		startposition=position
+
 func _physics_process(delta):
 	var velocity
 	var percentual
 	if moving=="indo":
-		
 		percentual=(position-startposition).length()/(endposition-startposition).length()
 		velocity=max(MAX_ADVANCE_SPEED*cos(PI/2*percentual),MIN_ADVANCE_SPEED)*((endposition-startposition).normalized())
 		if fonte:

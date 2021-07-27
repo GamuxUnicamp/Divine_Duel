@@ -132,12 +132,15 @@ func arcade_button_down():
 func arcade_tween_finished():
 	set_physics_process(true)
 	set_process(true)
-	get_tree().change_scene("res://menus/CharacterSelect.tscn")
+	#get_tree().change_scene("res://menus/CharacterSelect.tscn")
+	get_tree().change_scene("res://levels/DemoLevel.tscn")
 
 func versus_button_down():
 	$Panel/VersusButton/Emissor.start(self)
 	set_physics_process(false)
 	set_process(false)
+	get_tree().change_scene("res://levels/DemoLevel.tscn")
+
 func versus_tween_finished():
 	set_physics_process(true)
 	set_process(true)
@@ -148,39 +151,49 @@ func online_button_down():
 	$Panel/OnlineButton/Emissor.start(self)
 	set_physics_process(false)
 	set_process(false)
+
 func online_tween_finished():
 	set_physics_process(true)
 	set_process(true)
-	
 
 func options_button_down():
 	$Panel/OptionsButton/Emissor.start(self)
 	set_physics_process(false)
 	set_process(false)
+	get_tree().change_scene("res://levels/DemoLevel.tscn")
+
+
 func options_tween_finished():
 	set_physics_process(true)
 	set_process(true)
+	get_tree().change_scene("res://levels/DemoLevel.tscn")
+
 func quit_button_down():
 	$Panel/QuitButton/Emissor.start(self)
 	set_physics_process(false)
 	set_process(false)
-	
+	get_tree().change_scene("res://levels/DemoLevel.tscn")
+
 func quit_tween_finished():
 	set_physics_process(true)
 	set_process(true)
 	get_tree().quit()
+	get_tree().change_scene("res://levels/DemoLevel.tscn")
 
 func vs_player_button_down():
 	Global.character_select_mode = 1
-	get_tree().change_scene("res://menus/CharacterSelect.tscn")
+	#get_tree().change_scene("res://menus/CharacterSelect.tscn")
+	get_tree().change_scene("res://levels/DemoLevel.tscn")
 
 func vs_com_button_down():
 	Global.character_select_mode = 2
-	get_tree().change_scene("res://menus/CharacterSelect.tscn")
+	#get_tree().change_scene("res://menus/CharacterSelect.tscn")
+	get_tree().change_scene("res://levels/DemoLevel.tscn")
 
 func training_button_down():
 	Global.character_select_mode = 3
-	get_tree().change_scene("res://menus/CharacterSelect.tscn")
+	#get_tree().change_scene("res://menus/CharacterSelect.tscn")
+	get_tree().change_scene("res://levels/DemoLevel.tscn")
 
 func mouse_entered_menu(button):
 	selected_option = button
