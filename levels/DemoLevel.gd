@@ -13,6 +13,7 @@ func _ready():
 	
 	$Bastet_1.target = $Bastet_2.global_position
 	$Bastet_2.target = $Bastet_1.global_position
+	$Bastet_2.get_node("Sprite").flip_h=true
 	pass # Replace with function body.
 
 
