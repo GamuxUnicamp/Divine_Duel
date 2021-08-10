@@ -79,7 +79,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ "\"idle\"", -1, 1.0, false ],
+"args": [ "idle", -1, 1.0, false ],
 "method": "play"
 } ]
 }
@@ -91,7 +91,7 @@ script = ExtResource( 2 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 hframes = 12
-frame = 1
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -2.09503, -2.79335 )

@@ -42,3 +42,4 @@ texture = ExtResource( 1 )
 position = Vector2( 362.631, 313.177 )
 z_index = 1
 z_as_relative = false
+id = 1

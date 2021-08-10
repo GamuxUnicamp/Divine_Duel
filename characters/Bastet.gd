@@ -1,7 +1,7 @@
 #extends "res://characters/Character.gd"
 extends KinematicBody2D
 
-onready var wide_bullet_scene=load("res://bullets/BastetIoio2.tscn")
+
 
 enum ioio {NENHUM,INDO,VOLTANDO}
 var tem_ioio=ioio.NENHUM
@@ -10,11 +10,15 @@ var wide_bullet
 var wide_bullet2
 var R=500
 var teta=PI/4
+var cats_number=8
+var cats_distance=1000
 export var id=0
 
 var target
 
 onready var basic_bullet_scene = load("res://bullets/BastetIoio.tscn")
+onready var special_bullet_scene = load("res://bullets/gatinho.tscn")
+onready var wide_bullet_scene=load("res://bullets/BastetIoio2.tscn")
 onready var timer0 = $AttackTimer0
 onready var timer1 = $AttackTimer1
 onready var timer2 = $AttackTimer2
@@ -23,8 +27,6 @@ onready var timer3 = $AttackTimer3
 var velocity = Vector2()
 var player_number
 
-func _ready():
-	basic_bullet_scene = load("res://bullets/BastetIoio.tscn")
 
 func get_input1():
 	velocity = Vector2()
@@ -43,6 +45,9 @@ func get_input1():
 	if Input.is_action_pressed("attack1") and timer1.get_time_left() == 0:
 		wide_shot(target)
 		timer1.start()
+	if Input.is_action_pressed("attack2") and timer2.get_time_left() == 0:
+		special()
+		timer2.start()
 
 func get_input2():
 	velocity = Vector2()
@@ -90,6 +95,13 @@ func wide_shot(target):
 	wide_bullet2.move(self,R,angle-teta,1)
 	add_child(wide_bullet)
 	add_child(wide_bullet2)
+	
+func special():
+	$AnimationPlayer.play("special")
+	for i in range(cats_number):
+		var cat=special_bullet_scene.instance()
+		get_tree().get_root().add_child(cat)
+		cat.start(self,position+Vector2(cats_distance*cos(2*PI*i/cats_number),cats_distance*sin(2*PI*i/cats_number)))
 
 func receive():
 	tem_ioio=ioio.NENHUM
